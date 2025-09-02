@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
-
- await savesess(config.SESSION_ID) {
+import config from '../config.js'
+async function savesess(sessionUrl) {
     const folder = path.join(process.cwd(), 'session');
     if (!fs.existsSync(folder)) {
         fs.mkdirSync(folder, { recursive: true });
