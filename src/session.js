@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
 
-async function savesess(sessionUrl) {
+ await savesess(config.SESSION_ID) {
     const folder = path.join(process.cwd(), 'session');
     if (!fs.existsSync(folder)) {
         fs.mkdirSync(folder, { recursive: true });
