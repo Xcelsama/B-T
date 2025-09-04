@@ -37,8 +37,8 @@ command(
   },
   async (msg, match) => {
     const prefix = config.PREFIX
-    const botName = "nikka md"
-    const owner = "Nikka"
+    const botName = ""
+    const owner = ""
     const readMore = readMoreText()
 
     let [date, time] = new Date()
@@ -63,12 +63,13 @@ Category: ${cmd.type || "misc"}\`\`\``
         .map(c => c.name)
 
       if (categoryCommands.length > 0) {
-        let menu = `\`\`\`╭─𖣘 ${botName} 𖣘
-🌸 Prefix: ${prefix}
-🌸 Owner: ${owner}
-🌸 Date: ${date}
-🌸 Category: ${query.toUpperCase()}
-🌸 Commands: ${categoryCommands.length}
+        let menu = `\`\`\`╭─ꨄ xᴄᴇʟ_ʙᴏᴛꨄ
+
+👤 Owner: ${owner}
+📡 Prefix: ${prefix}
+📅 Date: ${date}
+📃 Category: ${query.toUpperCase()}
+🧃 Commands: ${categoryCommands.length}
 ╰───────\`\`\`\n${readMore}`
 
         menu += `\n\`\`\`╭── ${query.toUpperCase()} ──\`\`\``
@@ -78,11 +79,11 @@ Category: ${cmd.type || "misc"}\`\`\``
             menu += `\n│\`\`\`❀ ${cmdName.trim()}\`\`\``
           })
         menu += `\n╰───────\n\n`
-        menu += `\n\n\`\`\`𝗡𝗶𝗸𝗸𝗮 𝘅 𝗺𝗱\`\`\``
+        menu += `\n\n\`\`\`ᴜsᴇʀ ʙᴏᴛ ʙʏ ᴄᴏᴅᴇ ᴛʜᴇ ᴇᴀʀᴛʜ\`\`\``
 
         return await msg.client.sendMessage(msg.jid, {
           image: { url: config.IMG },
-          caption: menu
+          caption: ᴜsᴇʀʙᴏᴛ|ᴍᴇɴᴜ
         })
       }
 
@@ -91,11 +92,12 @@ Category: ${cmd.type || "misc"}\`\`\``
       )
     }
 
-    let menu = `\`\`\`╭─𖣘 ${botName} 𖣘
-🌸 Prefix: ${prefix}
-🌸 Owner: ${owner}
-🌸 Date: ${date}
-🌸 Cmds: ${commands.filter(c => c.name).length}
+    let menu = `\`\`\`╭── ⚘ᴜsᴇʀ-ʙᴏᴛ⚘
+
+↝ Owner: ${owner}
+↝ Prefix: ${prefix}
+↝ Date: ${date}
+↝ Cmds: ${commands.filter(c => c.name).length}
 ╰───────\`\`\`\n${readMore}`
 
     const categories = [...new Set(commands.filter(c => c.name).map(c => c.type || "misc"))].sort()
@@ -111,7 +113,7 @@ Category: ${cmd.type || "misc"}\`\`\``
       menu += `\n╰───────\n\n`
     })
 
-    menu += `\n\n\`\`\`𝗡𝗶𝗸𝗸𝗮 𝘅 𝗺𝗱\`\`\``
+    menu += `\n\n\`\`\`ᴜsᴇʀ ʙᴏᴛ ʙʏ ᴄᴏᴅᴇ ᴛʜᴇ ᴇᴀʀᴛʜ\`\`\``
 
     return await msg.client.sendMessage(
       msg.jid,
@@ -119,7 +121,7 @@ Category: ${cmd.type || "misc"}\`\`\``
         text: menu,
         contextInfo: {
           externalAdReply: {
-            title: "NIKKA | MENU",
+            title: "ᴜsᴇʀʙᴏᴛ | ᴍᴇɴᴜ",
             body: "NIKKA SOCIETY",
             thumbnailUrl: "http://cdn-haki.zone.id/files/zhQhjM.png",
             mediaType: 1,
