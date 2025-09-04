@@ -94,10 +94,10 @@ Category: ${cmd.type || "misc"}\`\`\``
 
     let menu = `\`\`\`╭── ⚘ᴜsᴇʀ-ʙᴏᴛ⚘
 
-↝ Owner: ${owner}
-↝ Prefix: ${prefix}
-↝ Date: ${date}
-↝ Cmds: ${commands.filter(c => c.name).length}
+👑 Owner: ${owner}
+🎐 Prefix: ${prefix}
+📆 Date: ${date}
+💻 Cmds: ${commands.filter(c => c.name).length}
 ╰───────\`\`\`\n${readMore}`
 
     const categories = [...new Set(commands.filter(c => c.name).map(c => c.type || "misc"))].sort()
@@ -122,7 +122,7 @@ Category: ${cmd.type || "misc"}\`\`\``
         contextInfo: {
           externalAdReply: {
             title: "ᴜsᴇʀʙᴏᴛ | ᴍᴇɴᴜ",
-            body: "NIKKA SOCIETY",
+            body: "ᴄᴏᴅᴇ ᴛʜᴇ ᴇᴀʀᴛʜ",
             thumbnailUrl: "http://cdn-haki.zone.id/files/zhQhjM.png",
             mediaType: 1,
             showAdAttribution: true,
