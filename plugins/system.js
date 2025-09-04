@@ -1,6 +1,8 @@
 import { command, commands, isPrivate } from "../src/commands.js";
 import config from "../config.js"
 import { readMoreText } from "../src/utils/util.js";
+import { exec } from "child_process";
+
 command(
     {
         name: "ping",
@@ -129,4 +131,39 @@ Category: ${cmd.type || "misc"}\`\`\``
       { quoted: msg.raw }
     )
   }
+)
+
+
+command(
+    {
+        name: "gitpull",
+        desc: "update bot",
+        usage: `${config.PREFIX}update`,
+        react: false,
+        type: "system",
+    },
+    async (msg, match) => {
+        await msg.reply("_Updating Bot_")
+        exec("git pull", (error, stdout, stderr) => {
+            msg.reply(stdout || stderr)
+            process.exit()
+        })
+    }
+)
+
+
+command(
+    {
+        name: "exec",
+        desc: "run shell command",
+        usage: `${config.PREFIX}exec <command>`,
+        react: false,
+        type: "system",
+    },
+    async (msg, match) => {
+        if (!match) return await msg.reply("no command provided")
+        exec(match, (error, stdout, stderr) => {
+            msg.reply(stdout || stderr || "done")
+        })
+    }
 )
