@@ -65,12 +65,12 @@ Category: ${cmd.type || "misc"}\`\`\``
       if (categoryCommands.length > 0) {
         let menu = `\`\`\`┌〈 xᴄᴇʟ_ʙᴏᴛ〉
 
-👤 Owner: ${owner}
-📡 Prefix: ${prefix}
-📅 Date: ${date}
-📃 Category: ${query.toUpperCase()}
-🧃 Commands: ${categoryCommands.length}
-╰───────\`\`\`\n${readMore}`
+👤 ᴏᴡɴᴇʀ: ${owner}
+📡 ᴘʀᴇғɪx: ${prefix}
+📅 ᴅᴀᴛᴇ: ${date}
+📃 ᴄᴀᴛᴇɢᴏʀʏ: ${query.toUpperCase()}
+🧃 ᴄᴏᴍᴍᴀɴᴅs: ${categoryCommands.length}
+╰════════════···▸\`\`\`\n${readMore}`
 
         menu += `\n\`\`\`┌〈 ${query.toUpperCase()} 〉\`\`\``
         categoryCommands
