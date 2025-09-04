@@ -63,7 +63,7 @@ Category: ${cmd.type || "misc"}\`\`\``
         .map(c => c.name)
 
       if (categoryCommands.length > 0) {
-        let menu = `\`\`\`╭─ꨄ xᴄᴇʟ_ʙᴏᴛꨄ
+        let menu = `\`\`\`┌〈 xᴄᴇʟ_ʙᴏᴛ〉
 
 👤 Owner: ${owner}
 📡 Prefix: ${prefix}
@@ -72,13 +72,13 @@ Category: ${cmd.type || "misc"}\`\`\``
 🧃 Commands: ${categoryCommands.length}
 ╰───────\`\`\`\n${readMore}`
 
-        menu += `\n\`\`\`╭── ${query.toUpperCase()} ──\`\`\``
+        menu += `\n\`\`\`┌〈 ${query.toUpperCase()} 〉\`\`\``
         categoryCommands
           .sort((a, b) => a.localeCompare(b))
           .forEach(cmdName => {
-            menu += `\n│\`\`\`❀ ${cmdName.trim()}\`\`\``
+            menu += `\n│\`\`\`¤│▸ ${cmdName.trim()}\`\`\``
           })
-        menu += `\n╰───────\n\n`
+        menu += `\n╰════════════···▸\n\n`
         menu += `\n\n\`\`\`ᴜsᴇʀ ʙᴏᴛ ʙʏ ᴄᴏᴅᴇ ᴛʜᴇ ᴇᴀʀᴛʜ\`\`\``
 
         return await msg.client.sendMessage(msg.jid, {
@@ -92,23 +92,23 @@ Category: ${cmd.type || "misc"}\`\`\``
       )
     }
 
-    let menu = `\`\`\`╭── ⚘ᴜsᴇʀ-ʙᴏᴛ⚘
+    let menu = `\`\`\`┌〈xᴄᴇʟ_ʙᴏᴛ〉
 
-👑 Owner: ${owner}
-🎐 Prefix: ${prefix}
-📆 Date: ${date}
-💻 Cmds: ${commands.filter(c => c.name).length}
+👑 ᴏᴡɴᴇʀ: ${owner}
+🎐 ᴘʀᴇғɪx: ${prefix}
+📆 ᴅᴀᴛᴇ: ${date}
+💻 ᴄᴍᴅs: ${commands.filter(c => c.name).length}
 ╰───────\`\`\`\n${readMore}`
 
     const categories = [...new Set(commands.filter(c => c.name).map(c => c.type || "misc"))].sort()
 
     categories.forEach(cat => {
-      menu += `\n\`\`\`╭── ${cat.toUpperCase()} ──\`\`\``
+      menu += `\n\`\`\`┌〈 ${cat.toUpperCase()} 〉\`\`\``
       commands
         .filter(c => (c.type || "misc") === cat && c.name)
         .sort((a, b) => a.name.localeCompare(b.name))
         .forEach(c => {
-          menu += `\n│\`\`\`❀ ${c.name.trim()}\`\`\``
+          menu += `\n│\`\`\`¤│▸ ${c.name.trim()}\`\`\``
         })
       menu += `\n╰───────\n\n`
     })
