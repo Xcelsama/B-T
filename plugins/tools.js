@@ -9,7 +9,7 @@ command(
     usage: `${config.PREFIX}apk <app name>`,
     fromMe: isPrivate,
     react: true,
-    type: "downloader",
+    type: "dl",
   },
   async (msg, match) => {
     try {
