@@ -20,7 +20,7 @@ command(
 
 command(
   {
-    name: "uuptime, 
+    name: "uptime", 
     desc: "Shows bot uptime and status",
     usage: `${config.PREFIX}alive`,
     fromMe: isPrivate,
