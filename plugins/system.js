@@ -3,10 +3,24 @@ import config from "../config.js";
 import { readMoreText } from "../src/utils/util.js";
 import { exec } from "child_process";
 
+
 command(
   {
     name: "alive",
-    pattern: "alive",
+    desc: "Check if bot is online",
+    usage: `${config.PREFIX}alive`,
+    fromMe: isPrivate,
+    react: true,
+    type: "info",
+  },
+  async (msg, match) => {
+    await msg.reply("✅ Bot is Active 🧃");
+  }
+);
+
+command(
+  {
+    name: "uuptime, 
     desc: "Shows bot uptime and status",
     usage: `${config.PREFIX}alive`,
     fromMe: isPrivate,
@@ -75,11 +89,11 @@ Category: ${cmd.type || "misc"}\`\`\``
 
       if (categoryCommands.length > 0) {
         let menu = `\`\`\`┌〈 xᴄᴇʟ_ʙᴏᴛ〉
-│👤 ᴏᴡɴᴇʀ: ${owner}
-│📡 ᴘʀᴇғɪx: ${prefix}
-│📅 ᴅᴀᴛᴇ: ${date}
-│📃 ᴄᴀᴛᴇɢᴏʀʏ: ${query.toUpperCase()}
-│🧃 ᴄᴏᴍᴍᴀɴᴅs: ${categoryCommands.length}
+│▸ ᴏᴡɴᴇʀ: ${owner}
+│▸ ᴘʀᴇғɪx: ${prefix}
+│▸ ᴅᴀᴛᴇ: ${date}
+│▸ ᴄᴀᴛᴇɢᴏʀʏ: ${query.toUpperCase()}
+│▸ ᴄᴏᴍᴍᴀɴᴅs: ${categoryCommands.length}
 ╰════════════···▸\`\`\`\n${readMore}`
 
         menu += `\n\`\`\`┌〈 ${query.toUpperCase()} 〉\`\`\``
@@ -103,10 +117,10 @@ Category: ${cmd.type || "misc"}\`\`\``
     }
 
     let menu = `\`\`\`┌〈xᴄᴇʟ_ʙᴏᴛ〉
-│👑 ᴏᴡɴᴇʀ: ${owner}
-│🎐 ᴘʀᴇғɪx: ${prefix}
-│📆 ᴅᴀᴛᴇ: ${date}
-│💻 ᴄᴍᴅs: ${commands.filter(c => c.name).length}
+│▹ ᴏᴡɴᴇʀ: ${owner}
+│▸ ᴘʀᴇғɪx: ${prefix}
+│▸ ᴅᴀᴛᴇ: ${date}
+│▸ ᴄᴍᴅs: ${commands.filter(c => c.name).length}
 ╰════════════···▸\`\`\`\n${readMore}`
 
     const categories = [...new Set(commands.filter(c => c.name).map(c => c.type || "misc"))].sort()
