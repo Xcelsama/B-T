@@ -4,26 +4,36 @@ import { readMoreText } from "../src/utils/util.js";
 import { exec } from "child_process";
 
 command(
-    {
-        name: "ping",
-        desc: "shows ping of bot",
-        usage: `${config.PREFIX}ping`,
-        fromMe: isPrivate,
-        react: true,
-        type: "info",
-    },
-    async (msg, match) => {
-        const start = Date.now();
-        const response = await msg.reply('Measuring ping...'); 
-        const end = Date.now();
-        await msg.client.sendMessage(msg.jid, {
-            text: `Pong! ${end - start}ms`,
-            edit: response.key,
-        });
-    } 
-)
+  {
+    name: "ping",
+ bot latency and response time",
+    usage: `${config.PREFIX}ping`,
+    fromMe: isPrivate,
+    react: true,
+    type: "info",
+  },
+  async (msg, match) => {
+    const start = Date.now();
+    const response = await msg.reply("🏓 Pinging server...");
+    const end = Date.now();
+    const latency = end - start;
 
+    const uptime = process.uptime(); // in seconds
+    const uptimeFormatted = new Date(uptime * 1000).toISOString().substr(11, 8);
 
+    const caption = `\`\`\`
+╭─❍ 𝙱𝙾𝚃 𝙿𝙸𝙽𝙶 ❍─╮
+│📶 Latency: ${latency}ms
+│⏱️ Uptime: ${uptimeFormatted}
+│📡 Server: Online
+╰───────────────╯
+\`\`\``;
+
+    await msg.client.sendMessage(msg: caption,
+      edit: response.key,
+    });
+  }
+);
 
 
 command(
