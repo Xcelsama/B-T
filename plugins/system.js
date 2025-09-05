@@ -1,32 +1,33 @@
 import { command, commands, isPrivate } from "../src/commands.js";
-import config from "../config.js"
+import config from "../config.js";
 import { readMoreText } from "../src/utils/util.js";
 import { exec } from "child_process";
 
 command(
   {
-    name: "ping",
-    desc: "Shows bot latency and uptime",
-    usage: `${config.PREFIX}ping`,
+    name: "alive",
+    pattern: "alive",
+    desc: "Shows bot uptime and status",
+    usage: `${config.PREFIX}alive`,
     fromMe: isPrivate,
     react: true,
     type: "info",
   },
   async (msg, match) => {
-    const start = Date.now();
-    const response = await msg.reply("🏓 Pinging server...");
-    const end = Date.now();
-    const latency = end - start;
+    const response = await msg.reply("🧠 Checking bot status...");
 
-    const uptime = process.uptime(); // in seconds
-    const uptimeFormatted = new Date(uptime * 1000).toISOString().substr(11, 8);
+    const uptime = process.uptime();
+    const hours = Math.floor(uptime / 3600);
+    const minutes = Math.floor((uptime % 3600) / 60);
+    const seconds = Math.floor(uptime % 60);
+
+    const upTimeText = `${hours}h ${minutes}m ${seconds}s`;
 
     const caption = `\`\`\`
-╭─❍ 𝙱𝙾𝚃 𝙿𝙸𝙽𝙶 ❍─╮
-│📶 Latency: ${latency}ms
-│⏱️ Uptime: ${uptimeFormatted}
-│📡 Status: Online
-╰───────────────╯
+╭───『 ⚡ BOT STATUS ⚡ 』───╮
+│⏱️ Up time : ${upTimeText}
+│📡 Status  : Online & Responsive
+╰─────────────────────────╯
 \`\`\``;
 
     await msg.client.sendMessage(msg.jid, {
@@ -35,7 +36,6 @@ command(
     });
   }
 );
-
 
 command(
   {
