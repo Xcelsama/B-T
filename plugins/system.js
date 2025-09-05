@@ -64,11 +64,11 @@ Category: ${cmd.type || "misc"}\`\`\``
 
       if (categoryCommands.length > 0) {
         let menu = `\`\`\`┌〈 xᴄᴇʟ_ʙᴏᴛ〉
-👤 ᴏᴡɴᴇʀ: ${owner}
-📡 ᴘʀᴇғɪx: ${prefix}
-📅 ᴅᴀᴛᴇ: ${date}
-📃 ᴄᴀᴛᴇɢᴏʀʏ: ${query.toUpperCase()}
-🧃 ᴄᴏᴍᴍᴀɴᴅs: ${categoryCommands.length}
+│👤 ᴏᴡɴᴇʀ: ${owner}
+│📡 ᴘʀᴇғɪx: ${prefix}
+│📅 ᴅᴀᴛᴇ: ${date}
+│📃 ᴄᴀᴛᴇɢᴏʀʏ: ${query.toUpperCase()}
+│🧃 ᴄᴏᴍᴍᴀɴᴅs: ${categoryCommands.length}
 ╰════════════···▸\`\`\`\n${readMore}`
 
         menu += `\n\`\`\`┌〈 ${query.toUpperCase()} 〉\`\`\``
@@ -92,11 +92,11 @@ Category: ${cmd.type || "misc"}\`\`\``
     }
 
     let menu = `\`\`\`┌〈xᴄᴇʟ_ʙᴏᴛ〉
-👑 ᴏᴡɴᴇʀ: ${owner}
-🎐 ᴘʀᴇғɪx: ${prefix}
-📆 ᴅᴀᴛᴇ: ${date}
-💻 ᴄᴍᴅs: ${commands.filter(c => c.name).length}
-╰───────\`\`\`\n${readMore}`
+│👑 ᴏᴡɴᴇʀ: ${owner}
+│🎐 ᴘʀᴇғɪx: ${prefix}
+│📆 ᴅᴀᴛᴇ: ${date}
+│💻 ᴄᴍᴅs: ${commands.filter(c => c.name).length}
+╰════════════···▸\`\`\`\n${readMore}`
 
     const categories = [...new Set(commands.filter(c => c.name).map(c => c.type || "misc"))].sort()
 
