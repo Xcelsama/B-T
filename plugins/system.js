@@ -6,7 +6,7 @@ import { exec } from "child_process";
 command(
   {
     name: "ping",
- bot latency and response time",
+    desc: "Shows bot latency and uptime",
     usage: `${config.PREFIX}ping`,
     fromMe: isPrivate,
     react: true,
@@ -25,11 +25,12 @@ command(
 ╭─❍ 𝙱𝙾𝚃 𝙿𝙸𝙽𝙶 ❍─╮
 │📶 Latency: ${latency}ms
 │⏱️ Uptime: ${uptimeFormatted}
-│📡 Server: Online
+│📡 Status: Online
 ╰───────────────╯
 \`\`\``;
 
-    await msg.client.sendMessage(msg: caption,
+    await msg.client.sendMessage(msg.jid, {
+      text: caption,
       edit: response.key,
     });
   }
