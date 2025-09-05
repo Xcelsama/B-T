@@ -37,8 +37,8 @@ command(
   },
   async (msg, match) => {
     const prefix = config.PREFIX
-    const botName = ""
-    const owner = ""
+    const botName = "e"
+    const owner = "ex"
     const readMore = readMoreText()
 
     let [date, time] = new Date()
@@ -83,7 +83,7 @@ Category: ${cmd.type || "misc"}\`\`\``
 
         return await msg.client.sendMessage(msg.jid, {
           image: { url: config.IMG },
-          caption: ᴜsᴇʀʙᴏᴛ|ᴍᴇɴᴜ
+          caption: ᴜsᴇʀʙᴏᴛ
         })
       }
 
