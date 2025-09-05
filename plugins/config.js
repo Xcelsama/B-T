@@ -136,8 +136,8 @@ command(
 
 command(
     {
-        name: "nikka",
-        desc: "changes nikka mode (on/off)",
+        name: "bot",
+        desc: "changes bot mode (on/off)",
         fromMe: true,
         react: true,
         type: "config",
@@ -150,15 +150,15 @@ command(
         const isEnabled = await CHATBOT.isEnabled(msg.jid);
 
         if (arg === "on") {
-            if (isEnabled) return await msg.reply(`_Nikka is already on_`);
+            if (isEnabled) return await msg.reply(`_Bot is already on_`);
             await CHATBOT.enable(msg.jid);
-            await msg.reply("Nikka enabled");
+            await msg.reply("bot enabled");
         }
 
         if (arg === "off") {
-            if (!isEnabled) return await msg.reply(`_Nikka is already off_`);
+            if (!isEnabled) return await msg.reply(`_Bot is already off_`);
             await CHATBOT.disable(msg.jid);
-            await msg.reply("Nikka disabled");
+            await msg.reply("bot disabled");
         }
 
         if (msg.react) await msg.react("");
