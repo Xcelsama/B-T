@@ -14,40 +14,27 @@ command(
     type: "info",
   },
   async (msg, match) => {
-    await msg.reply("✅ Bot is Active 🧃");
+    await msg.reply(" Bot is Active 🧃");
   }
 );
 
-command(
+ command(
   {
     name: "uptime", 
     desc: "Shows bot uptime and status",
-    usage: `${config.PREFIX}alive`,
+    usage: `${config.PREFIX}uptime`,
     fromMe: isPrivate,
     react: true,
     type: "info",
   },
   async (msg, match) => {
-    const response = await msg.reply("🧠 Checking bot status...");
-
     const uptime = process.uptime();
     const hours = Math.floor(uptime / 3600);
     const minutes = Math.floor((uptime % 3600) / 60);
     const seconds = Math.floor(uptime % 60);
-
     const upTimeText = `${hours}h ${minutes}m ${seconds}s`;
 
-    const caption = `\`\`\`
-╭───『 ⚡ BOT STATUS ⚡ 』───╮
-│⏱️ Up time : ${upTimeText}
-│📡 Status  : Online & Responsive
-╰─────────────────────────╯
-\`\`\``;
-
-    await msg.client.sendMessage(msg.jid, {
-      text: caption,
-      edit: response.key,
-    });
+    await msg.reply(`✅ Bot is online\nUp time: ${upTimeText}`);
   }
 );
 
@@ -89,11 +76,11 @@ Category: ${cmd.type || "misc"}\`\`\``
 
       if (categoryCommands.length > 0) {
         let menu = `\`\`\`┌〈 xᴄᴇʟ_ʙᴏᴛ〉
-│▸ ᴏᴡɴᴇʀ: ${owner}
-│▸ ᴘʀᴇғɪx: ${prefix}
-│▸ ᴅᴀᴛᴇ: ${date}
-│▸ ᴄᴀᴛᴇɢᴏʀʏ: ${query.toUpperCase()}
-│▸ ᴄᴏᴍᴍᴀɴᴅs: ${categoryCommands.length}
+│▸ᴏᴡɴᴇʀ: ${owner}
+│▸ᴘʀᴇғɪx: ${prefix}
+│▸ᴅᴀᴛᴇ: ${date}
+│▸ᴄᴀᴛᴇɢᴏʀʏ: ${query.toUpperCase()}
+│▸ᴄᴏᴍᴍᴀɴᴅs: ${categoryCommands.length}
 ╰════════════···▸\`\`\`\n${readMore}`
 
         menu += `\n\`\`\`┌〈 ${query.toUpperCase()} 〉\`\`\``
@@ -117,10 +104,10 @@ Category: ${cmd.type || "misc"}\`\`\``
     }
 
     let menu = `\`\`\`┌〈xᴄᴇʟ_ʙᴏᴛ〉
-│▹ ᴏᴡɴᴇʀ: ${owner}
-│▸ ᴘʀᴇғɪx: ${prefix}
-│▸ ᴅᴀᴛᴇ: ${date}
-│▸ ᴄᴍᴅs: ${commands.filter(c => c.name).length}
+│▹ᴏᴡɴᴇʀ: ${owner}
+│▸ᴘʀᴇғɪx: ${prefix}
+│▸ᴅᴀᴛᴇ: ${date}
+│▸ᴄᴍᴅs: ${commands.filter(c => c.name).length}
 ╰════════════···▸\`\`\`\n${readMore}`
 
     const categories = [...new Set(commands.filter(c => c.name).map(c => c.type || "misc"))].sort()
@@ -133,7 +120,7 @@ Category: ${cmd.type || "misc"}\`\`\``
         .forEach(c => {
           menu += `\n│\`\`\`¤│▸ ${c.name.trim()}\`\`\``
         })
-      menu += `\n╰───────\n\n`
+      menu += ╰════════════···▸`\n\n\n`
     })
 
     menu += `\n\n\`\`\`ᴜsᴇʀ ʙᴏᴛ ʙʏ ᴄᴏᴅᴇ ᴛʜᴇ ᴇᴀʀᴛʜ\`\`\``
