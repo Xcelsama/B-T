@@ -64,7 +64,6 @@ Category: ${cmd.type || "misc"}\`\`\``
 
       if (categoryCommands.length > 0) {
         let menu = `\`\`\`┌〈 xᴄᴇʟ_ʙᴏᴛ〉
-
 👤 ᴏᴡɴᴇʀ: ${owner}
 📡 ᴘʀᴇғɪx: ${prefix}
 📅 ᴅᴀᴛᴇ: ${date}
@@ -93,7 +92,6 @@ Category: ${cmd.type || "misc"}\`\`\``
     }
 
     let menu = `\`\`\`┌〈xᴄᴇʟ_ʙᴏᴛ〉
-
 👑 ᴏᴡɴᴇʀ: ${owner}
 🎐 ᴘʀᴇғɪx: ${prefix}
 📆 ᴅᴀᴛᴇ: ${date}
