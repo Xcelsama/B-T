@@ -90,7 +90,7 @@ Category: ${cmd.type || "misc"}\`\`\``
             menu += `\n│\`\`\`¤│▸ ${cmdName.trim()}\`\`\``
           })
         menu += `\n╰════════════···▸\n\n`
-        menu += `\n\n\`\`\`ᴜsᴇʀ ʙᴏᴛ ʙʏ ᴄᴏᴅᴇ ᴛʜᴇ ᴇᴀʀᴛʜ\`\`\``
+        menu += `\n\n\`\`\`sɪᴍᴘʟᴇ ᴜsᴇʀ ʙᴏᴛ\`\`\``
 
         return await msg.client.sendMessage(msg.jid, {
           image: { url: config.IMG },
