@@ -133,7 +133,7 @@ Category: ${cmd.type || "misc"}\`\`\``
           externalAdReply: {
             title: "ᴜsᴇʀʙᴏᴛ | ᴍᴇɴᴜ",
             body: "ᴄᴏᴅᴇ ᴛʜᴇ ᴇᴀʀᴛʜ",
-            thumbnailUrl: "http://cdn-haki.zone.id/files/zhQhjM.png",
+            thumbnailUrl: "https://i.ibb.co/chdzBSqV/copilot-image-1757776002589.png",
             mediaType: 1,
             showAdAttribution: true,
             renderLargerThumbnail: false
