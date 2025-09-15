@@ -104,10 +104,10 @@ Category: ${cmd.type || "misc"}\`\`\``
     }
 
     let menu = `\`\`\`┌〈xᴄᴇʟ_ʙᴏᴛ〉
-│▹ᴏᴡɴᴇʀ: ${owner}
-│▸ᴘʀᴇғɪx: ${prefix}
-│▸ᴅᴀᴛᴇ: ${date}
-│▸ᴄᴍᴅs: ${commands.filter(c => c.name).length}
+│*▸ᴏᴡɴᴇʀ:* ${owner}
+│*▸ᴘʀᴇғɪx:* ${prefix}
+│*▸ᴅᴀᴛᴇ:* ${date}
+│*▸ᴄᴍᴅs*: ${commands.filter(c => c.name).length}
 ╰════════════···▸\`\`\`\n${readMore}`
 
     const categories = [...new Set(commands.filter(c => c.name).map(c => c.type || "misc"))].sort()
