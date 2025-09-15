@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import axios from "axios";
 import { commands } from "../commands.js";
 import config from "../../config.js";
 const prefix = config.PREFIX
@@ -70,3 +71,57 @@ export function getUptime() {
 
   return result.join(" ");
 }
+
+
+
+export async function tts(arg, lang = "en", msg) {
+  try {
+    if (!arg || typeof arg !== "string") throw new Error("Invalid input")
+    const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(arg)}&tl=${lang}&client=tw-ob`
+    const response = await axios.get(url, {
+      responseType: "arraybuffer",
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/89.0.4389.82 Safari/537.36",
+      },
+    })
+    const buff = Buffer.from(response.data)
+    await msg.client.sendMessage(
+      msg.jid,
+      {
+        audio: buff,
+        mimetype: "audio/mpeg",
+        ptt: true,
+      },
+      { quoted: msg.raw }
+    )
+  } catch (e) {
+    await msg.client.sendMessage(msg.jid, { text: String(e) }, { quoted: msg.raw })
+  }
+}
+
+
+
+const patterns = {
+  tiktok: /^https?:\/\/(www\.)?(tiktok\.com|vt\.tiktok\.com)\/.+/i,
+  youtube: /^https?:\/\/(www\.)?(youtube\.com|youtu\.be)\/.+/i,
+  instagram: /^https?:\/\/(www\.)?instagram\.com\/.+/i,
+  facebook: /^https?:\/\/(www\.)?facebook\.com\/.+/i,
+  x: /^https?:\/\/(www\.)?(x\.com|twitter\.com)\/.+/i,
+};
+
+function base(url) {
+  try {
+    new URL(url);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export const isUrl = Object.assign(base, {
+  tiktok: (url) => patterns.tiktok.test(url),
+  youtube: (url) => patterns.youtube.test(url),
+  instagram: (url) => patterns.instagram.test(url),
+  facebook: (url) => patterns.facebook.test(url),
+  x: (url) => patterns.x.test(url),
+});
