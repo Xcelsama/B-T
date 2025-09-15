@@ -10,7 +10,7 @@ command(
     desc: "Convert text to speech using Google TTS",
     usage: `${prefix}tts <text>`,
     fromMe: true,
-    type: "media",
+    type: "tools",
   },
   async (msg, match) => {
     const text = match?.trim();
