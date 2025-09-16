@@ -8,7 +8,7 @@ command(
         desc: "tiktok image download",
         fromMe: isPrivate,
         react: true,
-        type: "download",
+        type: "media",
     },
     async (msg, match) => {
         let url = match?.trim();
@@ -36,7 +36,7 @@ command(
     desc: "Download apk by package or name",
     fromMe: isPrivate,
     react: true,
-    type: "download",
+    type: "tools",
   },
   async (msg, match) => {
     const q = match?.trim()
@@ -71,7 +71,7 @@ command(
     desc: "Download Instagram reels/posts",
     fromMe: isPrivate,
     react: true,
-    type: "download",
+    type: "media",
   },
   async (msg, match) => {
     let q = match?.trim() || msg.quoted?.text || ""
@@ -110,7 +110,7 @@ command(
     desc: "Download Pinterest images",
     fromMe: isPrivate,
     react: true,
-    type: "download",
+    type: "media",
   },
   async (msg, match) => {
     let q = match?.trim() || msg.quoted?.text || ""
@@ -137,7 +137,7 @@ command(
     desc: "Download TikTok videos or audio",
     fromMe: isPrivate,
     react: true,
-    type: "download",
+    type: "media",
   },
   async (msg, match) => {
     const q = match?.trim() || ""
