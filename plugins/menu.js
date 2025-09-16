@@ -4,7 +4,7 @@ import { readMoreText } from "../src/utils/util.js";
 
 command(
   {
-    name: "tmenu",
+    name: "menu",
     desc: "Display all bot commands",
     usage: `${config.PREFIX}menu`,
     type: "info",
