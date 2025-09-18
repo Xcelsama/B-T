@@ -48,7 +48,7 @@ export function messageHandler(nikka) {
       if (isEnabled) {
         try {
           const res = await nikkaChat(text, msg.sender);
-          // await msg.reply(res); // 🔧 Commented out as requested
+          // await msg.reply(res); //  
         } catch (error) {
           console.log(error);
           return msg.reply("Something wrong happened >_<");
