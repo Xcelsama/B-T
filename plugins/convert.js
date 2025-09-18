@@ -4,8 +4,8 @@ import { Sticker, StickerTypes }  from"wa-sticker-formatter";
 
 async function toSticker(msg, buffer, type) {
   const sticker = new Sticker(buffer, {
-    pack: "Haki",
-    author: "Nikka",
+    pack: "x3cl",
+    author: "sama",
     type,
     quality: 70,
   });
@@ -21,11 +21,11 @@ async function toSticker(msg, buffer, type) {
 
 command(
   {
-    name: "sticker",
+    name: "stk",
     desc: "Convert image/video to sticker",
     fromMe: isPrivate,
     react: true,
-    type: "converter",
+    type: "editor",
   },
   async (msg, match) => {
     if (!msg.quoted || !["imageMessage", "videoMessage"].includes(msg.quoted.type)) {
@@ -68,7 +68,7 @@ command(
     desc: "Convert sticker to photo",
     fromMe: isPrivate,
     react: true,
-    type: "converter",
+    type: "editor",
   },
   async (msg) => {
     if (!msg.quoted || msg.quoted.type !== "stickerMessage") {
