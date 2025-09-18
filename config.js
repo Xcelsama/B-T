@@ -8,7 +8,8 @@ function toBool(value, defaultValue = false) {
 
 
 export default {
-    OWNER: process.env.OWNER || "234",
+    OWNER: process.env.OWNER || "2347045035241",
+stickerPack: process.env.stickerPack || "X3cl",
     IMG: process.env.IMG || "http://cdn-haki.zone.id/files/H4Ouln.jpg",
     BOT: process.env.BOT || "2348146505741",
     LOGGER: toBool(process.env.LOGGER, true),
