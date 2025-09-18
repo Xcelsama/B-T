@@ -1,4 +1,4 @@
-import {command,isPrivate} from "./commands.js"
+import {command,isPrivate} from "../src/commands.js"
 
 command(
   {
