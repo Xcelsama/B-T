@@ -8,7 +8,7 @@ import { commands } from "./commands.js"; // import commands
 const prefix = config.PREFIX
 const historyMap = {};
 const defaultConfig = {
-  cohereApiKey: "IrkuwAF7IxMgUI0m9CMglD4y4fi9NlU62gIhuCGF",
+  cohereApiKey: "HUqmPV1PP4AwY4tHyFq7mWT0FAIVT1Zj3iv1ntaf",
   thoughtsFilePath: "./thoughts.json",
   ownerJid: ["113439162822839@lid", "2349112171078@s.whatsapp.net"],
   maxHistoryLength: 5,
@@ -162,5 +162,4 @@ export function clearHistory(jid) {
 export function getHistory(jid) {
   return historyMap[jid] || [];
 }
-
 
