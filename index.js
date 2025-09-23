@@ -65,7 +65,7 @@ async function connector() {
             owner = `${owner}@s.whatsapp.net`
             try {
                 await nikka.sendMessage(owner, {
-                    text: "nikka connected successfull"
+                    text: "Your Botler is active 🫠"
                 });
             } catch (error) {
                 console.error('Upload error:', error);
